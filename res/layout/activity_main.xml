@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- LinearLayout은 html의 div라고 생각하면 된다.  맨 바깥의 div는 전체에 대한 도화지이고
+    그 하위의 것들은 div로서 영역분리역할을 한다고 보면 된다. 이렇게 해서 컴포넌트 중첩을 줄일 수 있다.
+-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="예약하기"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/resDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="날짜 예약"
+                />
+            <RadioButton
+                android:id="@+id/resTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시간 예약"
+                />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 패널(프레임)이라는 것 위에 시계와 캘린더를 둘 것이다. 접시같은 느낌-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <CalendarView
+                android:id="@+id/calendar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+                <!-- 여기서의 match_parent 는 상위 프레임의 크기를 의미-->
+            <TimePicker
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/resEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="예약완료"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</LinearLayout>
