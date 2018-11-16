@@ -1,87 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
-<!-- LinearLayout은 html의 div라고 생각하면 된다.  맨 바깥의 div는 전체에 대한 도화지이고
-    그 하위의 것들은 div로서 영역분리역할을 한다고 보면 된다. 이렇게 해서 컴포넌트 중첩을 줄일 수 있다.
--->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        >
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:text="예약하기"
-            />
-
+            android:text="예약하기"/>
     </LinearLayout>
-
     <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/resDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="날짜 예약"
-                />
-            <RadioButton
-                android:id="@+id/resTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="시간 예약"
-                />
-        </RadioGroup>
-
+        <TextView
+            android:id="@+id/today"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text=""/>
     </LinearLayout>
-
-    <LinearLayout android:layout_width="match_parent"
+    <RadioGroup
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-
-        <!-- 패널(프레임)이라는 것 위에 시계와 캘린더를 둘 것이다. 접시같은 느낌-->
+        <RadioButton
+            android:id="@+id/rdDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="SET DATE"/>
+        <RadioButton
+            android:id="@+id/rdTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET TIME"/>
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="2.01">
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
             <CalendarView
                 android:id="@+id/calendar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
-                <!-- 여기서의 match_parent 는 상위 프레임의 크기를 의미-->
             <TimePicker
-                android:id="@+id/time"
+                android:id="@+id/timePicker"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-
+                android:layout_height="match_parent"
+                android:timePickerMode="spinner"/>
         </FrameLayout>
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:background="#a3a1a1">
         <Button
-            android:id="@+id/resEnd"
-            android:layout_width="match_parent"
+            android:id="@+id/confirmBtn"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="예약완료"
-            />
+            android:text="예약완료"/>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text=""/>
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="년 "/>
+        <TextView
+            android:id="@+id/month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="월 "/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일 "/>
+        <TextView
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시 "/>
+        <TextView
+            android:id="@+id/minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="분 "/>
 
     </LinearLayout>
 </LinearLayout>
